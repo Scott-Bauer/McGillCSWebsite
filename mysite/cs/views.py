@@ -43,3 +43,6 @@ def faculty(request):
 
 def undergraduate(request):
     return render(request, 'cs/Undergraduate.html')
+
+def news(request):
+    return render(request, 'cs/News.html')

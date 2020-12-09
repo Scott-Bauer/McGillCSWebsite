@@ -1,0 +1,558 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    
+    
+    
+    
+    
+}
+
+.navBar button:hover, .navBar button:focus {
+
+        text-decoration: none;
+            color: #de1738;
+            text-shadow: none;
+            -webkit-transition: 500ms linear 0s;
+            -moz-transition: 500ms linear 0s;
+            -o-transition: 500ms linear 0s;
+            transition: 500ms linear 0s;
+            outline: 0 none;
+
+    }
+
+
+
+.wholeBar {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      height: 250px;
+      position: relative;
+      top: 1px;
+      width: 100%;
+      background-image: url('{% static "images/image10.jpg" %}');
+      background-position: center;
+    background-repeat: no-repeat;
+    
+    
+    background-size: cover;
+    
+    
+      
+
+    }
+
+    .topbar {
+      position: absolute;
+      height: .018vw;
+      width: 100vw;
+      min-height: 15px;
+      font-size: clamp(10, 3vw, 13px);
+      padding-top: 5px;
+      padding-left: 16vw;
+      padding-right: 300px;
+      padding-bottom: 0.4vh;
+    }
+
+    div.topbar p {
+      color: black;
+      font-size: clamp(8px, 1.5rem, 20px);
+      width: 100%;
+    }
+
+    .header {
+      padding-top: 30px;
+      margin-bottom: 0px;
+      color: black;
+      padding-left: 16vw;
+      background: rgba(255, 255, 255, 0.5);
+      height: fit-content;
+    }
+
+    div.header p {
+      color: black;
+      font-size: clamp(20px, 1.5rem, 50px);
+      width: inherit;
+    }
+
+    div.header img {
+      opacity: 1;
+      min-width: 50px;
+      min-height: 75px;
+    }
+
+  
+
+    .navBar {
+      background: rgba(255, 255, 255, 0.5);
+      height: 40px;
+      color: black;
+      margin-top: 0px;
+      width: 100%;
+      height: 50px;
+      justify-content: space-evenly;
+      padding-left: 22vw;
+      display: flex;
+
+    }
+
+.navBar button {
+      background: rgba(243, 240, 240, 0);
+      height: 4vh;
+      width: fit-content;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-right: 4%;
+      border: none;
+      cursor: pointer;
+}
+
+.prospective ul, .academic ul {
+    position: absolute;
+    left: 0px;
+    background: white;
+    margin-top: 10px;
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    list-style: none;
+    opacity: 0;
+    
+    transition: all 0.4s ease;
+    transform: translateY(10px);
+    
+    
+}
+
+.prospective, .academic {
+    position: relative;
+}
+
+.prospective a, .academic a {
+    color: black;
+    text-decoration: none;
+    margin-left: 30px;
+    margin-bottom: 5px;
+    
+}
+
+.prospective li, .academic li {
+    
+    height: 100%;
+    width: 100%;
+    display: flex;
+    left: 2px;
+}
+
+.prospective li:hover, .academic li:hover {
+          background-color: #C9C9C9;
+}
+
+.navBar button:focus + ul {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+    
+
+    
+
+    
+     
+
+    
+    
+
+.foot {
+      width: 100%;
+      height: 170px;
+      padding:30px;
+      
+      background-color: black;
+      
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: auto;
+      align-items: center;
+      padding-left: 16vw;
+
+
+}
+
+.footLeft {
+      grid-column-start: 1;
+      grid-column-end: 1;
+      font-size:0.5;
+}
+
+.footRight {
+      grid-column-start: 2;
+      grid-column-end: 2;
+}
+
+    
+button {
+    padding: 0;
+    background: none;
+    border: none;
+    
+
+}
+button:hover {
+    background-color: grey;
+
+}
+
+.content {
+
+   
+    
+    
+
+}
+.sidebar {
+
+    float: left;
+    margin-left: 130px;
+}
+
+.centerbar {
+    float: none;
+    margin-left: 320px;
+}
+
+.sidebar table {
+    border-spacing: 10px;
+    margin-top: 30px;
+    
+}
+
+.centerbar table {
+    border-spacing: 10px;
+    margin-top: 30px;
+    width: 100%;
+    
+    border-collapse: collapse;
+    
+    
+}
+
+.centerbar td {
+    padding: 15px;
+    padding-bottom: 25px;
+    border-bottom: 3px solid #ddd;
+    text-align: left;
+    margin-top: 200px;
+    text-decoration-color: red;
+}
+
+.sidebar td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #fff;
+    
+}
+
+.centerbar tr:nth-child(even) {
+    background-color: #f0f0f0;
+
+
+}
+
+.centerbar tr:hover {
+    background-color: #909090;
+    
+}
+
+ tr:hover {
+    background-color: #909090;
+    
+}
+
+.center {
+   
+    margin-left: 50px;
+    float: right;
+    width: 100%;
+    
+    
+    height: 100%;
+}
+
+.p {
+    margin-right: 100px;
+    margin-top: 15px;
+    word-spacing: 4px;
+    margin-left: 340px;
+}
+
+.p a  {
+    text-decoration: none;
+    color: #780000;
+    
+}
+
+.p li {
+
+}
+
+.formContainer{
+      z-index: 2000;
+      position:absolute;
+      left: 80%;
+      top:100px;
+      align-items: center;
+
+    }
+
+
+
+
+
+
+
+
+
+
+   
+  </style>
+
+ 
+</head>
+
+<body style="height: 1900px;">
+
+
+  <div class="container" style="width: 100%; padding: 0;">
+
+   
+     
+      <div class="wholeBar">
+
+    <!-- Topmost bar of the webpage -->
+    <div class="topbar">
+
+      <p> <b>McGill University | Université McGill</b> <a href=""
+          style="color: rgb(252, 38, 33); font-size: 15px; float: right; padding-right: 15px;">Login</a></p>
+    </div>
+
+
+
+    <!-- Main, middle bar of the webpage -->
+    <div class="header">
+      <img src="{% static 'images/img4.png' %}" alt="img4" style="height:9vw; width:8vw; margin: 1.56vw; "><span
+        style="top: 50px; font-size: 3vw; height:400px; max-width:200px;"> Department of <span
+          style="color:rgb(252, 38, 33);">Computer Science</span></span></div>
+	<div class="formContainer">
+            <form action="https://google.com/search" target ="_blank" type="GET">
+              <input type="search" name="q" style="border:3px solid grey;  border-right:0; padding-right:0; margin-right:-5px;">
+              <input type ="submit" value="&#x1f50d;" style="border: 2px solid grey; background-color:white; border-left:none; margin-left:-25px; padding-left:0;"></form>
+          </div>
+    <!-- nav-bar -->
+
+    <div class="navBar">
+	<div class="prospective">
+        <button><a href="./">Home</a></button>
+        </div>
+
+
+        <div class="prospective">
+            <button>Prospective</button>
+            <ul>
+                <li><a href="generalinfo">General Info</a></li>
+                <li><a href="whycs">Why CS?</a></li>
+                <li><a href="CEGEP">CEGEP</a></li>
+                <li><a href="freshman">Freshmen</a></li>
+                <li><a href="major">Choosing a Major</a></li>
+                <li><a href="combiningstudies">Combining Studies</a></li>
+                <li><a href="internships">Internships</a></li>
+                <li><a href="undergrad">Undergraduate</a></li>
+                <li><a href="transfers">Transfer</a></li>
+            </ul>
+
+        </div>
+
+        <div class="prospective">
+            <button>Academic</button>
+            <ul style="height: 150px;">
+                <li><a href="Undergraduate">Undergraduate</a></li>
+                <li><a href="https://www.cs.mcgill.ca/academic/graduate/overview/">Graduate</a></li>
+                <li><a href="https://www.cs.mcgill.ca/academic/courses/">Courses</a></li>
+                <li><a href="https://www.cs.mcgill.ca/academic/ta/">Teaching Assistant</a></li>
+                <li><a href="https://www.cs.mcgill.ca/academic/funding/overview">Funding</a></li>
+                
+            </ul>
+
+        </div>
+
+        <div class="prospective">
+            <button>Research</button>
+            <ul style="height: 50px;">
+                <li><a href="areas">Areas</a></li>
+                <li><a href="https://www.cs.mcgill.ca/research/tech_reports/">Tech Reports</a></li>
+               
+            </ul>
+
+        </div>
+
+         <div class="prospective">
+            <button>People</button>
+            <ul style="height: 80px;">
+                <li><a href="faculty">Faculty</a></li>
+                <li><a href="https://www.cs.mcgill.ca/people/staff/">Staff</a></li>
+                <li><a href="https://www.cs.mcgill.ca/people/community/">Community</a></li>
+               
+            </ul>
+
+        </div>
+
+        <div class="prospective">
+            <button>News</button>
+            <ul style="height: 50px;">
+                <li><a href="news">News</a></li>
+                <li><a href="https://www.cs.mcgill.ca/events/">Events</a></li>
+
+            </ul>
+
+        </div>
+
+         <div class="prospective">
+            <button>Employment</button>
+            <ul style="height: 80px;">
+                <li><a href="faculty">Faculty</a></li>
+                <li><a href="https://www.cs.mcgill.ca/employment/lecturer/">Course Lecturer</a></li>
+                <li><a href="https://www.cs.mcgill.ca/employment/lecturer-info/">Priority Points</a></li>
+
+
+            </ul>
+
+        </div>
+
+        
+            <div class="prospective">
+            <button>Donate</button>
+            <ul style="height: 30px;">
+                <li><a href="https://www.cs.mcgill.ca/donate/">Donate</a></li>
+                
+
+
+            </ul>
+
+        </div>
+           
+
+
+         <div class="prospective">
+            <button>About</button>
+            <ul style="height: 50px;">
+                <li><a href="news">News</a></li>
+                <li><a href="https://www.cs.mcgill.ca/events/">Events</a></li>
+
+            </ul>
+
+        </div>
+
+
+
+
+
+      
+    </div>
+
+          </div>
+  
+
+    <div class="content">
+          <div class="sidebar">
+                <table>
+                    <tr><td><mark>News</mark></td></tr>
+                    <tr><td><b><a href="#" style="color: black; text-decoration: none; ">All</a></b></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/Announcement/" style="color: black; text-decoration: none;">Announcments</a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/Award/" style="color: black; text-decoration: none;">Awards</a></td></tr>
+                    </table>
+          </div>
+        
+        <div class="img"><img src="{% static 'images/image6.jpg' %}" style="width: 1129px; height: 400px; margin-left: 60px; "/></div>
+
+        <div class="center">
+
+            <h3 class="p" style="font-weight: lighter; color: #780000;">News@CS</h3>
+
+            <div class="centerbar">
+                <table>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/130/" style="color: black; text-decoration: none;">Virtual Open House 2020 | Portes ouvertes viertuelle 2020 <br /> Oct. 25, 2020 </a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/129/" style="color: black; text-decoration: none; ">Concerns related to COVID-19 <br /> Oct. 5,2020</a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/132/" style="color: black; text-decoration: none; ">Three SOCS professors are awarded large grants to use AI to understand cancer <br /> Nov. 5,2020</a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/131/" style="color: black; text-decoration: none; ">Assistant Professor Oana Balmau wins CORE John Makepeace Bennett Award <br /> Oct. 27,2020</a></td></tr>
+
+
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/128/" style="color: black; text-decoration: none;">Three Faculty Members Join the School of Computer Science  <br /> Sept. 1, 2020 </a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/127/" style="color: black; text-decoration: none; ">Prof. Siva Reddy won the VentureBeat AI Innovation Award 2020<br /> Aug. 3,2020</a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/126/" style="color: black; text-decoration: none; ">Prof. Pineau Reappointed as Wiliam Dawson Scholar<br /> July. 16,2020</a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/125/" style="color: black; text-decoration: none; ">Winter 2020 TA Award Winners Announced <br /> June. 22,2020</a></td></tr>
+
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/123/" style="color: black; text-decoration: none;">Congratulations to Our 2020 Graduates <br /> June. 19, 2020 </a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/120/" style="color: black; text-decoration: none; ">Information for Incoming Undergraduate Students <br /> June. 18,2020</a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/118/" style="color: black; text-decoration: none; ">COVID-19 resources <br /> June. 1,2020</a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/119/" style="color: black; text-decoration: none; ">Update on Remote Course Delivery in Computer Science <br /> May. 19,2020</a></td></tr>
+
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/121/" style="color: black; text-decoration: none;">What will hands-on learning look like at McGill this fall? <br /> May. 1, 2020 </a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/117/" style="color: black; text-decoration: none; ">The School of Computer Science Welcomes Four New Faculty Members <br /> Jan. 29,2020</a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/116/" style="color: black; text-decoration: none; ">Prof. Liu becomes IEEE Fellow <br /> Jan. 15,2020</a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/115/" style="color: black; text-decoration: none; ">Flight PS752 Crash <br /> Jan. 10,2020</a></td></tr>
+
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/114/" style="color: black; text-decoration: none;">Announcement of New Canada CIFAR AI Chairs <br /> Dec. 9, 2019 </a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/112/" style="color: black; text-decoration: none; ">Prof. Xue Liu Wins Best Paper Award at the IEEE Mass 2019 Conference <br /> Dec. 4,2019</a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/113/" style="color: black; text-decoration: none; ">Prof. Xue Liu Elevated to IEEE Fellow for Class 2020  <br /> Dec. 4,2019</a></td></tr>
+                    <tr><td><a href="https://www.cs.mcgill.ca/news/111/" style="color: black; text-decoration: none; ">Computer Science Teaching Assistant Awards <br /> Nov. 13,2019</a></td></tr>
+                    </table>
+          </div>
+
+
+        </div>
+        
+
+    </div>
+     
+
+    
+    
+    </div>
+
+    <div class="foot">
+        <div class="footLeft">
+      <p>© McGill University 2020 Credits</p>
+      All content related requests should be sent to<a href ="webadmin@cs.mcgill.ca"> webadmin at cs dot mcgill dot ca</a>
+    </div>
+         <div class="footRight">
+      <img src="{% static 'images/mcgill cs logo.png' %}" alt="mcgill cs logo" style="width:60%; height: 100px; margin-left: 60px;">
+    </div>
+      
+      </div>
+
+
+
+
+     
+
+</body>
+
+</html>
+

@@ -22,6 +22,19 @@
         
 }
 
+.navBar button:hover, .navBar button:focus {
+
+        text-decoration: none;
+	    color: #de1738;
+	    text-shadow: none;
+	    -webkit-transition: 500ms linear 0s;
+	    -moz-transition: 500ms linear 0s;
+	    -o-transition: 500ms linear 0s;
+	    transition: 500ms linear 0s;
+	    outline: 0 none;
+
+    }
+
 
 
 .wholeBar {
@@ -30,7 +43,7 @@
       position: relative;
       top: 1px;
       width: 100%;
-      background-image: url(images/image10.jpg);
+      background-image: url('{% static "images/image10.jpg" %}');
       background-position: center;
       background-repeat: no-repeat;
     
@@ -262,13 +275,25 @@ tr:hover {
     
 }
 
+.formContainer{
+      z-index: 2000;
+      position:absolute;
+      left: 80%;
+      top:100px;
+      align-items: center;
+    
+    }
+</style>
+<script>
+  var form = document.querySelector("form");
 
-
-
-
-
-   
-  </style>
+form.addEventListener("submit", function (e) {
+e.preventDefault();
+var search = form.querySelector("input[type=search]");
+search.value = "site:McGill " + search.value;
+form.submit();
+});
+</script>
 
  
 </head>
@@ -296,9 +321,20 @@ tr:hover {
       <img src="{% static 'images/img4.png' %}" alt="img4" style="height:9vw; width:8vw; margin: 1.56vw; "><span
         style="top: 50px; font-size: 3vw; height:400px; max-width:200px;"> Department of <span
           style="color:rgb(252, 38, 33);">Computer Science</span></span></div>
+          <div class="formContainer">
+            <form action="https://google.com/search" target ="_blank" type="GET">
+              <input type="search" name="q" style="border:3px solid grey;  border-right:0; padding-right:0; margin-right:5px;">
+              <input type ="submit" value="&#x1f50d;" style="border: 2px solid grey; background-color:white; border-left:none; margin-left:-25px; padding-left:0;"></form>
+          </div>
     <!-- nav-bar -->
 
    <div class="navBar">
+
+        <div class="prospective">
+            <button><a href="./">Home</a></button>
+        </div>
+
+
         <div class="prospective">
             <button>Prospective</button>
             <ul>
@@ -352,7 +388,7 @@ tr:hover {
         <div class="prospective">
             <button>News</button>
             <ul style="height: 50px;">
-                <li><a href="News.html">News</a></li>
+                <li><a href="news">News</a></li>
                 <li><a href="Events.html">Events</a></li>
 
             </ul>
@@ -388,7 +424,7 @@ tr:hover {
          <div class="prospective">
             <button>About</button>
             <ul style="height: 50px;">
-                <li><a href="News.html">News</a></li>
+                <li><a href="news">News</a></li>
                 <li><a href="Events.html">Events</a></li>
 
             </ul>

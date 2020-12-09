@@ -74,7 +74,8 @@
       width: 100%;
       height: fit-content;
       justify-content: space-evenly;
-      padding-left: 16vw;
+      /* padding-left: 16vw; */
+      display:flex;	
 
     }
 
@@ -86,7 +87,73 @@
       text-align: center;
       margin-right: 4%;
       border: none;
+      cursor: pointer;
     }
+
+   .navBar button:hover {
+     text-decoration: none;
+	    color: #de1738;
+	    text-shadow: none;
+	    -webkit-transition: 500ms linear 0s;
+	    -moz-transition: 500ms linear 0s;
+	    -o-transition: 500ms linear 0s;
+	    transition: 500ms linear 0s;
+	    outline: 0 none;
+
+    }
+
+	.prospective ul, .academic ul {
+    position: absolute;
+    left: 0px;
+    background: white;
+    margin-top: 10px;
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    list-style: none;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+   
+    
+    transition: all 0.4s ease;
+    transform: translateY(10px);
+    
+    
+}
+
+.prospective, .academic {
+    position: relative;
+}
+
+.prospective a, .academic a {
+    color: black;
+    text-decoration: none;
+    margin-left: 30px;
+    margin-bottom: 5px;
+    
+}
+
+.prospective li, .academic li {
+  height: fit-content;
+    height: 100%;
+    width: 100%;
+    display: flex;
+   
+}
+
+.prospective li:hover, .academic li:hover {
+          background-color: #C9C9C9;
+}
+
+.navBar button:focus + ul {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px);
+}
 
     body {
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -170,7 +237,6 @@
 
       position: relative;
       width: 100%;
-      height: 800px;
       overflow: hidden;
     }
 
@@ -178,13 +244,18 @@
 
       width: 200px;
       height: 200px;
-      background: linear-gradient(to bottom right, transparent 8%, rgb(51, 51, 51) 5%);
+	background-color: #eca1a6;
 
     }
 
-    .card h2,
+    .card h2 {
+
+	color: black;
+	font-size: auto;
+}
     .card p {
-      color: white;
+      color: black;
+	font-size:14px;
     }
 
     .card img {
@@ -218,47 +289,170 @@
       grid-column-start: 2;
       grid-column-end: 2;
     }
+    .menuIcon {
+            display: none;
+            font-size: 20px;
+            position: absolute;
+            left: 50px;
+            top: 100px;
+            z-index: 2000;
+            color: red;
+            border: none;
+        }
+
+        .prospective form {
+            display: none;
+        }
 
 
 
 
     @media only screen and (max-width: 700px) {
 
-      .wholeBar,
-      .header {
-        text-align: center;
-        padding-left: 0px;
-        margin-left: 0px;
-      }
+.wholeBar,
+.header {
+    text-align: center;
+    padding-left: 0px;
+    margin-left: 0px;
+}
 
-      .hide {
-        z-index: 999;
-      }
+.hide {
+    z-index: 999;
+}
 
-      .middleBar,
-      table {
-        height: fit-content;
-        text-align: left;
-        width: 100%;
-      }
+.middleBar,
+table {
+    height: fit-content;
+    text-align: left;
+    width: 100%;
+}
 
-      .hider {
-        z-index: 1000;
-        left: 40%;
-      }
+.menuIcon {
+    display: block;
+}
 
-      .topbar p {
-        display: none;
-      }
+.hider {
+    z-index: 1000;
+    left: 40%;
+}
 
-      .middleBar::before {
-        display: none;
-      }
-    }
-  </style>
+.topbar p {
+    display: none;
+}
+
+.middleBar::before {
+    display: none;
+}
+
+.formContainer {
+    display: none;
+}
+
+.prospective form {
+    display: block;
+}
+
+.navBar {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: fit-content;
+    top: 100px;
+    display: inline-block;
+    left: 0;
+    align-items: center;
+    text-align: center;
+}
+
+.prospective {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.prospective ul {
+    position: relative;
+    display: none;
+    align-items: center;
+    list-style: none;
+
+}
+
+.prospective li,
+.academic li {
+
+    height: fit-content;
+    text-align: left;
+    display: block;
+
+
+}
+}
+
+.formContainer {
+z-index: 2000;
+position: absolute;
+left: 75%;
+top: 100px;
+align-items: center;
+
+}
+</style>
+<script>
+var form = document.querySelector("form");
+
+form.addEventListener("submit", function (e) {
+e.preventDefault();
+var search = form.querySelector("input[type=search]");
+search.value = "site:McGill " + search.value;
+form.submit();
+});
+</script>
+<script>
+function hide2() {
+var dropdownContent = document.getElementById("d2");
+dropdownContent.classList.toggle("show");
+} function hide3() {
+var dropdownContent = document.getElementById("d3");
+dropdownContent.classList.toggle("show");
+} function hide4() {
+var dropdownContent = document.getElementById("d4");
+dropdownContent.classList.toggle("show");
+} function hide5() {
+var dropdownContent = document.getElementById("d5");
+dropdownContent.classList.toggle("show");
+} function hide6() {
+var dropdownContent = document.getElementById("d6");
+dropdownContent.classList.toggle("show");
+} function hide1() {
+var dropdownContent = document.getElementById("d1");
+dropdownContent.classList.toggle("show");
+} function hide7() {
+var dropdownContent = document.getElementById("d7");
+dropdownContent.classList.toggle("show");
+} function hide8() {
+var dropdownContent = document.getElementById("d8");
+dropdownContent.classList.toggle("show");
+}
+function navShow() {
+var x = document.getElementById("navb")
+if (x.style.visibility === "visible" && x.style.width < 700) {
+    x.style.visibility = "hidden";
+}
+else {
+    x.style.visibility = "visible"
+}
+}
+window.addEventListener("resize", function () {
+document.getElementById("navb").style.visibility = "visible"
+});
+
+</script>
 </head>
 
-<body>
+<body style="height: auto;">
 
   <div class="container" style="width: 100%; padding: 0;">
 
@@ -274,26 +468,26 @@
       <div class="carousel-inner">
 
         <div class="item active">
-          <img src="{% static '/images/image2.jpg' %}" alt="image1" style="width:100vw; height:900px;">
+          <img src="{% static 'images/image2.jpg' %}" alt="image1" style="width:100vw; height:900px;">
           <div class="carousel-caption">
-            <h3>Opportunities</h3>
-            <p>Learn More ></p>
+            <h3>Research Opportunities</h3>
+            <p><a href="../cs/areas" style="color:white;">Learn More </a></p>
           </div>
         </div>
 
         <div class="item">
 		<img src=" {% static 'images/image3.png' %}" alt="image2" style="width:100vw;height:900px;">
           <div class="carousel-caption">
-            <h3>Example Text</h3>
-            <p>Learn More ></p>
+            <h3>COVID-19/CORONAVIRUS REMOTE EDUCATION AND RESEARCH RESOURCES</h3>
+            <p><a href="https://www.mcgill.ca/tls/students/remote-learning-resources" style="color:white;">Learn More</a> </p>
           </div>
         </div>
 
         <div class="item">
 		<img src="{% static 'images/image1.jpg' %}" alt="image3" style="width:100vw;height:900px;">
           <div class="carousel-caption">
-            <h3>Example Text</h3>
-            <p>Learn More ></p>
+            <h3>WHY CS?</h3>
+            <p><a href="../cs/whycs" style="color:white;">Learn More</a> </p>
           </div>
         </div>
 
@@ -327,13 +521,125 @@
       <img src="{% static 'images/img4.png' %}" alt="img4" style="height:9vw; width:8vw; margin: 1.56vw; "><span
         style="top: 50px; font-size: 3vw; height:400px; max-width:200px;"> Department of <span
           style="color:rgb(252, 38, 33);">Computer Science</span></span></div>
+          <div class="formContainer">
+            <form action="https://google.com/search" target ="_blank" type="GET">
+              <input type="search" name="q" style="border:3px solid grey;  border-right:0; padding-right:0; margin-right:-5px;">
+              <input type ="submit" value="&#x1f50d;" style="border: 2px solid grey; background-color:white; border-left:none; margin-left:-25px; padding-left:0;"></form>
+          </div>
     <!-- nav-bar -->
+    <div class="menuIcon"><button onclick="navShow()"> &#9776;</button></div>
+    <div class="navBar" id="navb">
 
-    <div class="navBar">
-      <button>Prospective</button><button>Academic</button>
-      <button>Research</button><button>People</button><button>News</button><button>Employment</button><button>Donate</button><button>About</button>
+
+        <div class="prospective">
+            <button onclick="hide1()">Prospective</button>
+            <ul id="d1">
+                <li><a href="generalinfo">General Info</a></li>
+                <li><a href="whycs">Why CS?</a></li>
+                <li><a href="cegep">CEGEP</a></li>
+                <li><a href="freshman">Freshmen</a></li>
+                <li><a href="major">Choosing a Major</a></li>
+                <li><a href="combiningstudies">Combining Studies</a></li>
+                <li><a href="internships">Internships</a></li>
+                <li><a href="undergrad">Undergraduate</a></li>
+                <li><a href="transfers">Transfer</a></li>
+            </ul>
+
+        </div>
+
+        <div class="prospective">
+            <button onclick="hide2()">Academic</button>
+            <ul id="d2" style="height: 150px;">
+                <li><a href="Undergraduate">Undergraduate</a></li>
+                <li><a href="https://www.cs.mcgill.ca/academic/graduate/overview/">Graduate</a></li>
+                <li><a href="https://www.cs.mcgill.ca/academic/courses/">Courses</a></li>
+                <li><a href="https://www.cs.mcgill.ca/academic/ta/">Teaching Assistant</a></li>
+                <li><a href="https://www.cs.mcgill.ca/academic/funding/overview">Funding</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="prospective">
+            <button onclick="hide3()">Research</button>
+            <ul id="d3" style="height: 50px;">
+                <li><a href="areas">Areas</a></li>
+                <li><a href="https://www.cs.mcgill.ca/research/tech_reports/">Tech Reports</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="prospective">
+            <button onclick="hide4()">People</button>
+            <ul id="d4" style="height: 80px;">
+                <li><a href="faculty">Faculty</a></li>
+                <li><a href="https://www.cs.mcgill.ca/people/staff/">Staff</a></li>
+                <li><a href="https://www.cs.mcgill.ca/people/community/">Community</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="prospective">
+            <button onclick="hide5()">News</button>
+            <ul id="d4" style="height: 50px;">
+                <li><a href="News.html">News</a></li>
+                <li><a href="https://www.cs.mcgill.ca/events/">Events</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="prospective">
+            <button onclick="hide6()">Employment</button>
+            <ul id="d6" style="height: 80px;">
+                <li><a href="faculty">Faculty</a></li>
+                <li><a href="https://www.cs.mcgill.ca/employment/lecturer/">Course Lecturer</a></li>
+                <li><a href="https://www.cs.mcgill.ca/employment/lecturer-info/">Priority Points</a></li>
+
+
+            </ul>
+
+        </div>
+
+
+        <div class="prospective">
+            <button onclick="hide7()">Donate</button>
+            <ul id="d7" style="height: 30px;">
+                <li><a href="Donate.html">Donate</a></li>
+
+
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="prospective">
+            <button onclick="hide8()">About</button>
+            <ul id="d8" style="height: 50px;">
+                <li><a href="News.html">News</a></li>
+                <li><a href="https://www.cs.mcgill.ca/events/">Events</a></li>
+
+            </ul>
+
+        </div>
+        <div class="prospective">
+            <span>
+                <form action="https://google.com/search" target="_blank" type="GET">
+                    <input type="search" name="q"
+                        style="border:3px solid grey;  border-right:0; padding-right:0; margin-right:-5px;">
+                    <input type="submit" value="&#x1f50d;"
+                        style="border: 2px solid grey; background-color: white; border-left:none; margin-left:-25px; padding-left:0;">
+                </form>
+            </span>
+        </div>
+
+
     </div>
-  </div>
+</div>
 
   <div class="middleBar">
     <p>Postings @ McGill Computer Science</p>
@@ -348,7 +654,7 @@
             23, 2019 - Dec 20, 2019</a></th>
       </tr>
       <tr style="border-bottom: none;">
-        <th style="text-align: center; padding-top: 10px;"><button>Explore More Opportunities >></button></th>
+        <th style="text-align: center; padding-top: 10px;"><button><a href="news">Find out more >></a></button></th>
       </tr>
 
     </table>
@@ -357,6 +663,58 @@
     <h1 style="color:rgb(252, 38, 33); padding-left:16vw; padding-bottom:20px; padding-top: 40px; font-size:2.5vw;">News
       & Events</h1>
 
+    <table style="margin-left:16vw; text-align: center; margin-top:10px; margin: 0px auto;  border-collapse: separate;
+    border-spacing: 0 30px;">
+      <tr style="padding-bottom:40px;">
+        <td>
+          <div class="card">
+            <h2>Research coordinator</h2>
+            <p> Recruiment ongoing, please apply if interested. </p>
+	       
+          </div>
+        </td>
+        <td>
+          <div class="card">
+            <h2> VentureBeat AI innovation award! </h2>
+            <p> Congratulations to Prof Reddy for winning! </p>
+	      
+          </div>
+        </td>
+        <td>
+          <div class="card">
+            <h2> Virtual convocation </h2>
+            <p>Find out more about how McGill is handling convocation this year!</p>
+	       
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="card">
+            <h2>Positions available at the NIST lab</h2>
+            <p> Please apply if you are interested </p>
+	       
+          </div>
+        </td>
+        <td>
+          <div class="card">
+            <h2>Three SOCS professors awarded grants </h2>
+            <p>Professors Blanchette, Hamilton, and their team are working on deciphering mechanisms related to epigentics</p>
+          </div>
+  </div>
+  </td>
+  <td>
+    <div class="card">
+      <h2>SOCS Recruitment</h2>
+      <p>Please apply if interested</p>
+
+    </div>
+    </div>
+  </td>
+  </tr>
+  </table>
+  </div>
 
 
   <div class="foot">
