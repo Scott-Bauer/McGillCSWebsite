@@ -74,8 +74,11 @@
       width: 100%;
       height: fit-content;
       justify-content: space-evenly;
-      /* padding-left: 16vw; */
+       /* padding-left: 16vw;  */
+	/* margin-right: 1px; */
       display:flex;	
+      padding-right: 75px;
+      padding-left:75px;
 
     }
 
@@ -83,11 +86,13 @@
       background: rgba(243, 240, 240, 0);
       height: 4vh;
       width: fit-content;
-      font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+      font-size: clamp(1.5rem, 2.3vw, 1.8rem);
       text-align: center;
-      margin-right: 4%;
+      /* margin-right: 3%; */
       border: none;
       cursor: pointer;
+      padding:0;
+	
     }
 
    .navBar button:hover {
@@ -109,7 +114,7 @@
     margin-top: 10px;
     width: 200px;
     height: 250px;
-    display: flex;
+    display: block;
     flex-direction: column;
     text-align: center;
     justify-content: space-around;
@@ -127,6 +132,7 @@
 
 .prospective, .academic {
     position: relative;
+	margin-left: 2px;
 }
 
 .prospective a, .academic a {
@@ -139,7 +145,6 @@
 
 .prospective li, .academic li {
   height: fit-content;
-    height: 100%;
     width: 100%;
     display: flex;
    
@@ -356,7 +361,6 @@ table {
     position: absolute;
     z-index: 99;
     width: 100%;
-    height: fit-content;
     top: 100px;
     display: inline-block;
     left: 0;
@@ -584,7 +588,7 @@ document.getElementById("navb").style.visibility = "visible"
         <div class="prospective">
             <button onclick="hide5()">News</button>
             <ul id="d4" style="height: 50px;">
-                <li><a href="News.html">News</a></li>
+                <li><a href="news">News</a></li>
                 <li><a href="https://www.cs.mcgill.ca/events/">Events</a></li>
 
             </ul>
